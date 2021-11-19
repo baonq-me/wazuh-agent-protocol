@@ -15,6 +15,6 @@ compressed_plaintext = aes.decrypt(cipher_text)
 while compressed_plaintext[0] == ord('!'):
     compressed_plaintext = compressed_plaintext[1:]
 
-plain_text = zlib.decompress(compressed_plaintext)
+plain_text = zlib.decompress(compressed_plaintext).decode("utf-8")
 print(plain_text)
 
